@@ -1,0 +1,10 @@
+version: 3
+
+tasks:
+  build:
+    cmd: GOARCH=wasm GOOS=js go build -o web/app.wasm cmd/main.go
+
+  run: 
+    cmds:
+    - GOARCH=wasm GOOS=js go build -o web/app.wasm cmd/main.go 
+    - go run cmd/main.go
